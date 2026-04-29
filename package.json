@@ -1,0 +1,22 @@
+{
+  "name": "express-routing-api",
+  "version": "1.0.0",
+  "description": "Here’s a **concise version under 350 characters**:  **Description:** Basic backend project using Node.js and Express.js that demonstrates routing and handling HTTP requests and responses. Includes simple endpoints like `/`, `/news`, and `/products`, each returning JSON data, helping beginners understand core API and server concepts.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gtmmanni-codes/express-routing-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/gtmmanni-codes/express-routing-api/issues"
+  },
+  "homepage": "https://github.com/gtmmanni-codes/express-routing-api#readme"
+}
