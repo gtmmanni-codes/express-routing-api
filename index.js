@@ -1,6 +1,7 @@
 let express = require("express");
 
 let app = express();
+app.use(express.json());
 
 app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
@@ -13,6 +14,19 @@ app.get("/news",(req,res)=>{
 app.get("/product",(req,res)=>{
     res.send({status:200,message:"Product page here"})
 });
+
+
+
+app.post("/about",(req,res)=>{
+    
+    
+    res.send({
+        status:200,
+        Message:"Sucessful",
+        BodyData: req.body 
+    });
+
+})
 
 app.listen("8000");
 
