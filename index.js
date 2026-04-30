@@ -23,7 +23,8 @@ app.post("/about",(req,res)=>{
     res.send({
         status:200,
         Message:"Sucessful",
-        BodyData: req.body 
+        BodyData: req.body ,
+        queryData: req.query,
     });
 
 })
