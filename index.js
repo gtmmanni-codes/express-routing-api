@@ -7,15 +7,17 @@ app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
 });
 
-app.get("/news",(req,res)=>{
-    res.send({status:200,message:"News page here"})
+//ADDED PARAMS PARAMETERS
+
+app.get("/news/:id",(req,res)=>{
+    res.send({status:200,message:"News page here"+req.params.id})
 });
 
 app.get("/product",(req,res)=>{
     res.send({status:200,message:"Product page here"})
 });
 
-
+//ADDED BODY AND QUERY PARAMETERS
 
 app.post("/about",(req,res)=>{
     
