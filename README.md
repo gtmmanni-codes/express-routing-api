@@ -19,3 +19,10 @@ You need to write URL : localhost:8000/about?token=12345
 instead of "about" you can access whatever you want.
 
 We can create multiple middleware .
+
+Previous was App level middleware.
+
+Now, we create route level middleware by adding middleware directly in .get method i.e. now all other runs normally but if we want to run /product we need to pass middleware.
+
+Now , adding .env file to keep data secure by storing environment variable or important variable in separate file by using require("dotenv").config()
+and to access that variable we can use process.env.[variable name]
