@@ -1,7 +1,11 @@
 let express = require("express");
 
 let app = express();
+
+//for receiving json data
 app.use(express.json());
+
+
 
 app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
@@ -18,7 +22,7 @@ app.get("/product",(req,res)=>{
 });
 
 //ADDED BODY AND QUERY PARAMETERS
-
+//use post to get data in much secure form as we can't display directly on browser
 app.post("/about",(req,res)=>{
     
     
@@ -31,6 +35,10 @@ app.post("/about",(req,res)=>{
 
 })
 
-app.listen("8000");
+
+//port number
+app.listen("8000",()=>{
+    console.log("Successfull")
+});
 
 
