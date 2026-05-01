@@ -1,4 +1,4 @@
-let myToken = "12345";
+
 let checkToken = (req,res,next)=>{
     
     if(req.query.token=="" || req.query.token == undefined){
@@ -6,7 +6,7 @@ let checkToken = (req,res,next)=>{
             status:0,
             msg : "Please fill the token"
         })
-    }else if(req.query.token != myToken){
+    }else if(req.query.token != process.env.myToken){
         return res.send({
             status:0,
             msg : "Please fill correct token"

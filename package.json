@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/gtmmanni-codes/express-routing-api/issues"
   },
-  "homepage": "https://github.com/gtmmanni-codes/express-routing-api#readme"
+  "homepage": "https://github.com/gtmmanni-codes/express-routing-api#readme",
+  "dependencies": {
+    "dotenv": "^17.4.2"
+  }
 }

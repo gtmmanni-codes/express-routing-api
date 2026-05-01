@@ -1,5 +1,6 @@
 let express = require("express");
-const { checkToken } = require("./checkTokenMiddleware");
+require("dotenv").config(); //configuring .env file
+const { checkToken } = require("./checkTokenMiddleware"); 
 
 let app = express();
 
@@ -10,11 +11,11 @@ app.use(express.json());
 
 
 
-let myPassword = "password";
 
 
 
-/*app.use(checkToken);
+/*
+app.use(checkToken);
 app.use((req,res,next)=>{
      
     if(req.query.password=="" || req.query.password == undefined){
@@ -22,7 +23,7 @@ app.use((req,res,next)=>{
             status:0,
             msg : "Please fill the password"
         })
-    }else if(req.query.password != myPassword){
+    }else if(req.query.password != process.env.myPassword){
         return res.send({
             status:0,
             msg : "Please fill correct Password"
@@ -32,8 +33,8 @@ app.use((req,res,next)=>{
     }
     
 
-})*/
-
+})
+*/
 app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
 });
@@ -44,6 +45,8 @@ app.get("/news/:id",(req,res)=>{
     res.send({status:200,message:"News page here"+req.params.id})
 });
 
+
+//route level middleware
 app.get("/product",checkToken,(req,res)=>{
     res.send({status:200,message:"Product page here"})
 });
@@ -64,7 +67,7 @@ app.post("/about",(req,res)=>{
 
 
 //port number
-app.listen("8000",()=>{
+app.listen(process.env.myPort,()=>{
     console.log("Successfull")
 });
 
