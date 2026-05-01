@@ -14,7 +14,7 @@ let myPassword = "password";
 
 
 
-app.use(checkToken);
+/*app.use(checkToken);
 app.use((req,res,next)=>{
      
     if(req.query.password=="" || req.query.password == undefined){
@@ -32,7 +32,7 @@ app.use((req,res,next)=>{
     }
     
 
-})
+})*/
 
 app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
@@ -44,7 +44,7 @@ app.get("/news/:id",(req,res)=>{
     res.send({status:200,message:"News page here"+req.params.id})
 });
 
-app.get("/product",(req,res)=>{
+app.get("/product",checkToken,(req,res)=>{
     res.send({status:200,message:"Product page here"})
 });
 
