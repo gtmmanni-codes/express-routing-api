@@ -9,6 +9,7 @@ app.use(express.json());
 
 
 let myToken = "12345";
+let myPassword = "password";
 
 let checkToken = (req,res,next)=>{
     
@@ -30,6 +31,24 @@ let checkToken = (req,res,next)=>{
 
 
 app.use(checkToken);
+app.use((req,res,next)=>{
+     
+    if(req.query.password=="" || req.query.password == undefined){
+        return res.send({
+            status:0,
+            msg : "Please fill the password"
+        })
+    }else if(req.query.password != myPassword){
+        return res.send({
+            status:0,
+            msg : "Please fill correct Password"
+        })
+    }else{
+        next();
+    }
+    
+
+})
 
 app.get("/",(req,res)=>{
     res.send({status:200,message:"Home page here"})
