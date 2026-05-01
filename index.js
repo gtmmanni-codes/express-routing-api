@@ -1,4 +1,5 @@
 let express = require("express");
+const { checkToken } = require("./checkTokenMiddleware");
 
 let app = express();
 
@@ -8,26 +9,9 @@ app.use(express.json());
 //adding application level middleware
 
 
-let myToken = "12345";
+
 let myPassword = "password";
 
-let checkToken = (req,res,next)=>{
-    
-    if(req.query.token=="" || req.query.token == undefined){
-        return res.send({
-            status:0,
-            msg : "Please fill the token"
-        })
-    }else if(req.query.token != myToken){
-        return res.send({
-            status:0,
-            msg : "Please fill correct token"
-        })
-    }else{
-        next();
-    }
-    
-}
 
 
 app.use(checkToken);
