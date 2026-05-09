@@ -56,3 +56,7 @@ Middleware in Express.js
 Secure Data Handling
 Environment Configuration
 Dynamic Routing
+
+## Nodemon
+
+I used Nodemon for automatic server restarting during development. It helps save time by restarting the Node.js server whenever changes are made in the project files, so there is no need to manually stop and restart the server every time.
