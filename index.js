@@ -1,6 +1,6 @@
 let express = require("express");
 require("dotenv").config(); //configuring .env file
-const { checkToken } = require("./checkTokenMiddleware"); 
+const { checkToken } = require("./checkTokenMiddleware");
 
 let app = express();
 
@@ -8,10 +8,6 @@ let app = express();
 app.use(express.json());
 
 //adding application level middleware
-
-
-
-
 
 
 /*
@@ -35,31 +31,31 @@ app.use((req,res,next)=>{
 
 })
 */
-app.get("/",(req,res)=>{
-    res.send({status:200,message:"Home page here"})
+app.get("/", (req, res) => {
+    res.send({ status: 200, message: "Home page here" })
 });
 
 //ADDED PARAMS PARAMETERS
 
-app.get("/news/:id",(req,res)=>{
-    res.send({status:200,message:"News page here"+req.params.id})
+app.get("/news/:id", (req, res) => {
+    res.send({ status: 200, message: "News page here" + req.params.id })
 });
 
 
 //route level middleware
-app.get("/product",checkToken,(req,res)=>{
-    res.send({status:200,message:"Product page here"})
+app.get("/product", checkToken, (req, res) => {
+    res.send({ status: 200, message: "Product page here" })
 });
 
 //ADDED BODY AND QUERY PARAMETERS
 //use post to get data in much secure form as we can't display directly on browser
-app.post("/about",(req,res)=>{
-    
-    
+app.post("/about", (req, res) => {
+
+
     res.send({
-        status:200,
-        Message:"Sucessful",
-        BodyData: req.body ,
+        status: 200,
+        Message: "Sucessful",
+        BodyData: req.body,
         queryData: req.query,
     });
 
@@ -67,7 +63,7 @@ app.post("/about",(req,res)=>{
 
 
 //port number
-app.listen(process.env.myPort,()=>{
+app.listen(process.env.myPort, () => {
     console.log("Successfull")
 });
 

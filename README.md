@@ -26,3 +26,9 @@ Now, we create route level middleware by adding middleware directly in .get meth
 
 Now , adding .env file to keep data secure by storing environment variable or important variable in separate file by using require("dotenv").config()
 and to access that variable we can use process.env.[variable name]
+
+## Features
+
+Express.js Routing
+GET and POST methods
+Route Parameters (req.params)
