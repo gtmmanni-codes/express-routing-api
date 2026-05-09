@@ -32,3 +32,9 @@ and to access that variable we can use process.env.[variable name]
 Express.js Routing
 GET and POST methods
 Route Parameters (req.params)
+Query Parameters (req.query)
+Body Parameters (req.body)
+Application Level Middleware
+Route Level Middleware
+Environment Variables using .env
+JSON Data Handling with express.json()
