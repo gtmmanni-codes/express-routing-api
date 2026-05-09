@@ -38,3 +38,12 @@ Application Level Middleware
 Route Level Middleware
 Environment Variables using .env
 JSON Data Handling with express.json()
+
+## API endpoints
+
+| Method | Route       | Description                      |
+| ------ | ----------- | -------------------------------- |
+| GET    | `/`         | Home Route                       |
+| GET    | `/news/:id` | Dynamic Route using Params       |
+| GET    | `/product`  | Protected Route using Middleware |
+| POST   | `/about`    | Send Body and Query Data         |
