@@ -47,3 +47,12 @@ JSON Data Handling with express.json()
 | GET    | `/news/:id` | Dynamic Route using Params       |
 | GET    | `/product`  | Protected Route using Middleware |
 | POST   | `/about`    | Send Body and Query Data         |
+
+## Concepts Covered
+
+REST API Basics
+Express Server Setup
+Middleware in Express.js
+Secure Data Handling
+Environment Configuration
+Dynamic Routing
